@@ -1,175 +1,400 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Тестовое ПрофитКит</title>
-        <link href="indextwo.css" rel="stylesheet" type="text/css">
+        <link href="index.css" rel="stylesheet" type="text/css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     </head>
-
-    <body>     
-        <div class="popularItems">
-
-            <div class="top">
-                <h2>ПОПУЛЯРНЫЕ ТОВАРЫ</h2>
-                <a href="">Недавно купили</a>
-                <a href="">Вас может заинтересовать</a>
+    <body>
+        <header>
+            <div class="topHeader">
+                <div class="topHeaderLeft">
+                    <div class="cities">
+                        <img src="Vector.png" class="point">
+                        <a href="" class="selectCity">Санкт-Петербург</a>
+                        <div class="dropDownCities">
+                            <a href="" class="otherCity">Санкт-Петербург</a>
+                            <a href="" class="otherCity">Москва</a>
+                            <a href="" class="otherCity">Нижний Новгород</a>
+                            <a href="" class="otherCity">Ростов-на-Дону</a>
+                        </div>
+                        <img src="Rectangle 50.png" class="arrow">
+                    </div>
+                    <div class="phone">
+                        <img src="Phone.png">
+                        <span>8 800 785-25-35</span>
+                    </div>
+                </div>
+                <div class="topHeaderMiddle">
+                    <div><a class="goldy">Goldy</a> <a>Store</a></div>
+                    <span class="jewelryShop">ювелирный магазин</span>
+                </div>
+                <div class="topHeaderRight">
+                    <div class="enter">
+                        <a href="">Вход</a>
+                        |
+                        <a href="">Регистрация</a>
+                    </div>
+                    <div class="icons">
+                        <div class="favorite">
+                            <a href="" class="heart"><img src="coolicon.png"></a>
+                            <span class="quantity">23</span>
+                        </div>
+                        <a href=""><img src="chart.png"></a>
+                        <a href=""><img src="bag.png"></a>
+                    </div>
+                </div>
             </div>
+            <div class="bottomHeader">
+                <div class="navigation">
+                    <a href="" class="navigation">КАТАЛОГ</a>
+                    <a href="" class="navigation">АКЦИИ</a>
+                    <a href="" class="navigation">БРЕНДЫ</a>
+                    <a href="" class="navigation">МАГАЗИНЫ</a>
+                    <a href="" class="navigation">О НАС</a>
+                    <a href="" class="navigation">ДОСТАВКА И ОПЛАТА</a>
+                    <a href="" class="navigation">СТАТЬИ</a>
+                </div>
+                <form>
+                    <label for=""><img src="Union.png"></label>
+                    <input placeholder="Поиск по сайту">
+                </form>
+            </div>
+        </header>
+        <main>
+            <div class="first">
+                <script>
+                    'use strict';
 
-            <div class="showItems">
-                <button class="left">❮</button>
-                <div class="container">
-                    <div class="item">
-                        <div class="itemMain">
-                            <div class="sticker">
-                                <img src="" class="one">
-                                <img src="" class="two">
+                    let div = document.getElementsByClassName('move');
+                    let move = 0;
+                    let i = 0;
+
+                    function minus(){
+                        move -= 1300;
+                        div[0].style.marginLeft = move + 'px';
+                        div[1].style.marginLeft = move + 'px';
+                        div[2].style.marginLeft = move + 'px';
+
+                        if( i<2){
+                            i++;
+                        }else{
+                            move = 0;
+                            div[0].style.marginLeft = 0;
+                            div[1].style.marginLeft = 0;
+                            div[2].style.marginLeft = 0;
+                            i = 0;
+                        }
+                    }
+
+                    function plus(){
+                        move += 1300;
+                        div[0].style.marginLeft = move + 'px';
+                        div[1].style.marginLeft = move + 'px';
+                        div[2].style.marginLeft = move + 'px';
+                        i--;
+                        if(move>=0){
+                            i = 0;
+                            div[0].style.marginLeft = 0;
+                            div[1].style.marginLeft = 0;
+                            div[2].style.marginLeft = 0;
+                            move = 0;
+                        }
+                    }
+                </script>
+                <div class="arrowControl">
+                    <button class="arrow" onclick="plus()"><img src="Component 11.png"></button>
+                    <button class="arrow" onclick="minus()"><img src="Component 10.png"></button>
+                </div>
+                <div class="move" id="one">
+                    <div class="oneLeftSide">
+                        <span class="oneTop">Супер скидка до 60%</span>
+                        <span class="oneMiddle">НА БРИЛЛИАНТЫ</span>
+                        <a href="" class="more">ПОДРОБНЕЕ</a>
+                    </div>
+                    <img src="pngegg 1.png" alt="">
+                </div>
+                <div class="move" id="two"></div>
+                <div class="move" id="three"></div>
+                <div class="quantitySlides">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </div>
+            <div class="second">
+                <span class="categories">Популярные категории</span>
+                <div class="category">
+                    <a href="" class="category"><img src="pngegg (1) 4.png" class="category">Кольца</a>
+                    <a href="" class="category"><img src="pngegg (2) 4.png" class="category">Серьги</a>
+                    <a href="" class="category"><img src="pngegg (3) 4.png" class="category">Помолвочные кольца</a>
+                    <a href="" class="category"><img src="pngegg (4) 4.png" class="category">Браслеты</a>
+                    <a href="" class="category"><img src="pngegg (5) 4.png" class="category">Колье и подвески</a>
+                    <a href="" class="category"><img src="pngegg (6) 4.png" class="category">Часы</a>
+                </div>
+            </div>
+            <div class="third">
+                <span class="sale">Распродажа</span>
+                <div class="button">
+                    <div class="buttonCategories">
+                        <button class="category">Кольца</button>
+                        <button class="category">Серьги</button>
+                        <button class="category">Браслеты</button>
+                        <button class="category">Часы</button>
+                    </div>
+                    <div class="buttonNav">
+                        <button class="buttonNav"><img src="Component 9.png" alt=""></button>
+                        <button class="buttonNav" id="buttonNavRight">
+                            <img src="Component 9 (R).png" alt="" class="buttonActiveRight">
+                        </button>
+                    </div>
+                </div>
+                <div class="saleProducts">
+                    <div class="product">
+                        <div class="productTop">
+                            <span class="sticker">Sale</span>
+                            <img src="EE5B443D9C82A365C3EA3FE09DAF 1.png" alt="" class="productPhoto">
+                            <div class="buttonFavorites">
+                                <button class="favoriteProduct" id="heart"></button>
+                                <button class="favoriteProduct" id="eye"></button>
                             </div>
-                            <img src="" alt="НЕТ ФОТО">
-                            <div class="choise">
-                                <button class="favorite">
-                                    ♥
-                                </button>
-                                <button class="compare">
-                                    C
-                                </button>
-                            </div>
-                            <div class="quantitySlides">
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
+                            <div class="slidesProduct">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
-                        <div class="itemFooter">
-                            <span class="header">Тарелка керамическая ручной работы ф12</span>
-                            <div class="priceTwo">
-                                <span class="priceOne">600₽</span>
-                                <span class="priceTwo">810₽</span>
+                        <div class="productBottom">
+                            <div class="priceInfo">
+                                <div class="price">
+                                    <span class="valid">41 000 &#8381</span>
+                                    <span class="invalid">65 000 &#8381</span>
+                                </div>
+                                <span class="discount">-45%</span>
                             </div>
-                            <div class="quantity">
-                                <button class="minus">—</button>
-                                <span class="quantity">1</span>
-                                <button class="plus">+</button>
-                            </div>
-                            <button class="addToCard">В корзину</button>
+                            <a href="" class="description">Стильное кольцо из белого золота с бриллиантами</a>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="itemMain">
-                            <div class="sticker">
-                                <img src="" class="one">
-                                <img src="" class="two">
+                    <div class="product">
+                        <div class="productTop">
+                            <span class="sticker" style="visibility: hidden;">Sale</span>
+                            <img src="EE5B443D9C82A365C3EA3FE09DAF 2.png" alt="" class="productPhoto">
+                            <div class="buttonFavorites">
+                                <button class="favoriteProduct" id="heart"></button>
+                                <button class="favoriteProduct" id="eye"></button>
                             </div>
-                            <img src="" alt="Кашпо">
-                            <div class="choise">
-                                <button class="favorite">
-                                    ♥
-                                </button>
-                                <button class="compare">
-                                    C
-                                </button>
-                            </div>
-                            <div class="quantitySlides">
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
+                            <div class="slidesProduct">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
-                        <div class="itemFooter">
-                            <span class="header">Кашпо для цветов керамическое СИМПЛГРЕЙ</span>
-                            <div class="price">
-                                <span class="priceOne">450₽</span>
+                        <div class="productBottom">
+                            <div class="priceInfo">
+                                <div class="price">
+                                    <span class="valid">56 000 &#8381</span>
+                                    <span class="invalid" style="visibility: hidden;">65 000 &#8381</span>
+                                </div>
+                                <span class="discount" style="visibility: hidden;">-45%</span>
                             </div>
-                            <div class="quantity">
-                                <button class="minus">—</button>
-                                <span class="quantity">1</span>
-                                <button class="plus">+</button>
-                            </div>
-                            <button class="addToCard">В корзину</button>
+                            <a href="" class="description">Стильное кольцо из белого золота с бриллиантами</a>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="itemMain">
-                            <div class="sticker">
-                                <img src="" class="one" alt="ХИТ">
-                                <img src="" class="two">
+                    <div class="product">
+                        <div class="productTop">
+                            <span class="sticker" style="visibility: hidden;">Sale</span>
+                            <img src="EE5B443D9C82A365C3EA3FE09DAF 3.png" alt="" class="productPhoto">
+                            <div class="buttonFavorites">
+                                <button class="favoriteProduct" id="heart"></button>
+                                <button class="favoriteProduct" id="eye"></button>
                             </div>
-                            <img src="" alt="Умные часы">
-                            <div class="choise">
-                                <button class="favorite">
-                                    ♥
-                                </button>
-                                <button class="compare">
-                                    C
-                                </button>
-                            </div>
-                            <div class="quantitySlides">
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
+                            <div class="slidesProduct">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
-                        <div class="itemFooter">
-                            <span class="header">Умные часы SMARTWATHC XM 109 черный</span>
-                            <div class="price">
-                                <span class="priceOne">12 999₽</span>
+                        <div class="productBottom">
+                            <div class="priceInfo">
+                                <div class="price">
+                                    <span class="valid">37 500 &#8381</span>
+                                    <span class="invalid" style="visibility: hidden;">65 000 &#8381</span>
+                                </div>
+                                <span class="discount" style="visibility: hidden;">-45%</span>
                             </div>
-                            <div class="quantity">
-                                <button class="minus">—</button>
-                                <span class="quantity">1</span>
-                                <button class="plus">+</button>
-                            </div>
-                            <button class="addToCard">В корзину</button>
+                            <a href="" class="description">Стильное кольцо из белого золота с бриллиантами</a>
                         </div>
                     </div>
-                    <div class="item">
-                        <div class="itemMain">
-                            <div class="sticker">
-                                <img src="" class="one" alt="NEW">
-                                <img src="" class="two">
+                    <div class="product">
+                        <div class="productTop">
+                            <span class="sticker" style="visibility: hidden;">Sale</span>
+                            <img src="EE5B443D9C82A365C3EA3FE09DAF 4.png" alt="" class="productPhoto">
+                            <div class="buttonFavorites">
+                                <button class="favoriteProduct" id="heart"></button>
+                                <button class="favoriteProduct" id="eye"></button>
                             </div>
-                            <img src="" alt="Кольцо">
-                            <div class="choise">
-                                <button class="favorite">
-                                    ♥
-                                </button>
-                                <button class="compare">
-                                    C
-                                </button>
-                            </div>
-                            <div class="quantitySlides">
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
-                                <button class="forSlide"></button>
+                            <div class="slidesProduct">
+                                <div class="circle"></div>
+                                <div class="circle"></div>
+                                <div class="circle"></div>
                             </div>
                         </div>
-                        <div class="itemFooter">
-                            <span class="header">Золотое кольцо МАЛИКА с аметистом и фиантами</span>
-                            <div class="price">
-                                <span class="priceOne">15 700₽</span>
+                        <div class="productBottom">
+                            <div class="priceInfo">
+                                <div class="price">
+                                    <span class="valid">39 200 &#8381</span>
+                                    <span class="invalid" style="visibility: hidden;">65 000 &#8381</span>
+                                </div>
+                                <span class="discount" style="visibility: hidden;">-45%</span>
                             </div>
-                            <div class="quantity">
-                                <button class="minus">—</button>
-                                <span class="quantity">1</span>
-                                <button class="plus">+</button>
-                            </div>
-                            <button class="addToCard">В корзину</button>
+                            <a href="" class="description">Стильное кольцо из белого золота с бриллиантами</a>
                         </div>
                     </div>
                 </div>
-                <button class="right">❯</button>
             </div>
-
-        </div>
+            <div class="fourth">
+                <div class="announcement">
+                    <div class="announcementLeft">
+                        <span class="about">СКИДКИ НА ВСЕ УКРАШЕНИЯ С БРИЛЛИАНТАМИ</span>
+                        <span class="amount"><a style="font-size: 24px;">До</a> -50%</span>
+                    </div>
+                    <img src="pngegg 2.png">
+                </div>
+                <div class="announcement" id="middle">
+                    <div class="announcementLeft">
+                        <span class="about">СКИДКИ НА КОЛЬЦА И БРАСЛЕТЫ</span>
+                        <span class="amount" id="red"><a style="font-size: 24px;">До</a> -40%</span>
+                    </div>
+                    <img src="pngegg (1) 5.png">
+                </div>
+                <div class="announcement" id="right">
+                    <div class="announcementLeft">
+                        <span class="about">СНИЖЕНИЕ ЦЕН НА ОБРУЧАЛЬНЫЕ КОЛЬЦА</span>
+                        <span class="amount" id="yellow"><a style="font-size: 24px;">До</a> -60%</span>
+                    </div>
+                    <img src="pngegg (3) 5.png">
+                </div>
+            </div>
+            <div class="fifth">
+                <div class="topFifth">
+                    <span class="productOfTheDay">Товар дня</span>
+                    <div>
+                        <button class="buttonFifth"><img src="Group 845.png" alt=""></button>
+                        <button class="buttonFifth"><img src="Group 844.png" alt=""></button>
+                    </div>
+                </div>
+                <div class="bottomFifth">
+                    <div class="bottomFifthLeft">
+                        <div class="bottomFifthLeftSticker">
+                            <span class="stickerFifth" id="blackSticker">New</span>
+                            <span class="stickerFifth" id="yellowSticker">Хит</span>
+                            <span class="stickerFifth" id="greenSticker">Sale</span>
+                        </div>
+                        <img src="04EDA19C9767F7100CFFDE5D049E 1.png" alt="">
+                        <div class="buttonFifthLeft">
+                            <button class="fifthLeft"><img src="Rectangle 153.png" alt=""></button>
+                            <button class="fifthLeft"><img src="Rectangle 152.png" alt=""></button>
+                        </div>
+                    </div>
+                    <div class="bottomFifthRight">
+                        <div class="fifthRightFirst">
+                            <div class="rating">
+                                <a class="star">&#9733</a>
+                                <a class="star">&#9733</a>
+                                <a class="star">&#9733</a>
+                                <a class="star">&#9733</a>
+                                <a class="star">&#9734</a>
+                            </div>
+                            4,2
+                        </div>
+                        <span class="nameOfProduct">Кольцо из золота с бриллиантами</span>
+                        <span class="article">Артикул: 1012076</span>
+                        <div class="fifthRightSecond">
+                            <div class="fifthPrice">
+                                <span class="newPrice">22 000 &#8381</span>
+                                <span class="oldPrice">22 000 &#8381</span>
+                                <span class="discount" id="fifthDiscount">-45%</span>
+                            </div>
+                            <div class="timeForDiscount">
+                                <div class="timeValue">12 <a class="hms">часов</a></div>
+                                :
+                                <div class="timeValue">46 <a class="hms">минут</a></div>
+                                :
+                                <div class="timeValue">51 <a class="hms">секунд</a></div>
+                            </div>
+                        </div>
+                        <hr>
+                        <span class="color">ЦВЕТ</span>
+                        <div class="choiseColor">
+                            <div class="borderButton"><button class="forChoice" id="greyChoice"></button></div>
+                            <div class="borderButton"><button class="forChoice" id="yellowChoice"></button></div>
+                            <div class="borderButton"><button class="forChoice" id="orangeChoice"></button></div>
+                            <div class="borderButton"><button class="forChoice" id="greenChoice"></button></div>
+                        </div>
+                        <div class="size">РАЗМЕР<button class="clue">?</button></div>
+                        <div class="sizeRange">
+                            <button class="buttonSize">16,5</button>
+                            <button class="buttonSize">17,5</button>
+                            <button class="buttonSize">18,5</button>
+                            <button class="buttonSize">19</button>
+                            <button class="buttonSize">19,5</button>
+                            <button class="buttonSize">19,5</button>
+                            <button class="buttonSize">18,5</button>
+                            <button class="buttonSize">19</button>
+                            <button class="buttonSize">19,5</button>
+                            <button class="buttonSize">19,5</button>
+                        </div>
+                        <div class="controlOfProduct">
+                            <div class="controlLeft">
+                                <button class="controlButton" id="black">В КОРЗИНУ</button>
+                                <button class="controlButton" id="white">КУПИТЬ В 1 КЛИК</button>
+                            </div>
+                            <div class="controlRight">
+                                <div class="buttonAndText" id="save">
+                                    <button class="buttonControlRight" id="heart"></button>Сохранить
+                                </div>
+                                <div class="buttonAndText">
+                                    <button class="buttonControlRight"><img src="Group 2.png" alt=""></button>Сравнить
+                                </div>
+                                <div class="buttonAndText">
+                                    <button class="buttonControlRight"><img src="Vector (Stroke).png" alt=""></button>Поделиться
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sixth">
+                <div class="sixthTop">
+                    <span class="paper">Статьи</span>
+                    <a href="" class="read">ЧИТАТЬ ВСЕ<img src="Arrow 2.png" style="height: 14px; width: 26px;"></a>
+                </div>
+                <div class="sixthBottom">
+                    <div class="summary">
+                        <img src="mathilde-langevin-f1FkoppimsA-unsplash 1.png" alt="">
+                        <span class="date">21 сентября 2021</span>
+                        <a href="" class="forward">Обручальные кольца: тренды 2021</a>
+                    </div>
+                    <div class="summary">
+                        <img src="raphael-lovaski-guiVHikFkvQ-unsplash 1.png" alt="">
+                        <span class="date">21 сентября 2021</span>
+                        <a href="" class="forward">Главные ювелирные тренды года</a>
+                    </div>
+                    <div class="summary">
+                        <img src="fiona-murray-KE95wIwKp4Y-unsplash 1.png" alt="">
+                        <span class="date">21 сентября 2021</span>
+                        <a href="" class="forward">Жемчуг: 7 малоизвестных фактов о культовом украшении</a>
+                    </div>
+                    <div class="summary">
+                        <img src="anastasia-anastasia-nlQFycTD04M-unsplash 1.png" alt="">
+                        <span class="date">21 сентября 2021</span>
+                        <a href="" class="forward">Как отлечить золото от подделки: 10 практических советов</a>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
